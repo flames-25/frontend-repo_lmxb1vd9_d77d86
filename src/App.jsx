@@ -1,26 +1,38 @@
-import { useState } from 'react'
+import Hero from './components/Hero'
+import About from './components/About'
+import Projects from './components/Projects'
+import Contact from './components/Contact'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-stone-100 text-stone-900">
+      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b-2 border-stone-900">
+        <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+          <a href="#" className="inline-flex items-center gap-2 font-semibold text-stone-900">
+            <span className="bg-amber-100 border-2 border-stone-900 px-2 py-1 shadow-[4px_4px_0_0_#1c1917]">侘び寂び</span>
+            <span>Portfolio</span>
+          </a>
+          <nav className="flex items-center gap-4 text-sm">
+            <a href="#about" className="bg-white px-3 py-2 border-2 border-stone-900 shadow-[4px_4px_0_0_#1c1917] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0_0_#1c1917] transition-transform">About</a>
+            <a href="#projects" className="bg-white px-3 py-2 border-2 border-stone-900 shadow-[4px_4px_0_0_#1c1917] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0_0_#1c1917] transition-transform">Projects</a>
+            <a href="#contact" className="bg-stone-900 text-amber-100 px-3 py-2 border-2 border-stone-900 shadow-[4px_4px_0_0_#1c1917] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0_0_#1c1917] transition-transform">Contact</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <Hero />
+        <About />
+        <Projects />
+        <Contact />
+      </main>
+
+      <footer className="py-10 border-t-2 border-stone-900 bg-white">
+        <div className="mx-auto max-w-6xl px-6 text-sm text-stone-600 flex flex-col md:flex-row items-center justify-between gap-3">
+          <p>© {new Date().getFullYear()} — Built with a wabi-sabi × neobrutalism spirit.</p>
+          <p>日本語 / English</p>
+        </div>
+      </footer>
     </div>
   )
 }
